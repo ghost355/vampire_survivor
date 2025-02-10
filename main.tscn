@@ -1,3 +1,83 @@
-[gd_scene format=3 uid="uid://ck2g1dbq0ftuw"]
+[gd_scene load_steps=3 format=3 uid="uid://ck2g1dbq0ftuw"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_sjiqo"]
+[ext_resource type="Texture2D" uid="uid://bb36r4crpguyv" path="res://assets/sprites/character/character01.png" id="2_wf6rk"]
 
 [node name="Main" type="Node"]
+
+[node name="Arena" type="Node2D" parent="."]
+
+[node name="Boulder" type="Polygon2D" parent="Arena"]
+position = Vector2(617, 250)
+color = Color(0.313726, 0.309804, 0.317647, 1)
+polygon = PackedVector2Array(382, 323, 359, 295, 360, 264, 408, 246, 441, 261, 442, 286, 462, 294, 454, 325, 429, 340)
+
+[node name="Boulder4" type="Polygon2D" parent="Arena"]
+position = Vector2(984, 114)
+color = Color(0.313726, 0.309804, 0.317647, 1)
+polygon = PackedVector2Array(384, 338, 359, 295, 394, 275, 408, 246, 441, 261, 445, 278, 462, 294, 446, 312, 429, 340)
+
+[node name="Boulder5" type="Polygon2D" parent="Arena"]
+position = Vector2(712, -145)
+color = Color(0.313726, 0.309804, 0.317647, 1)
+polygon = PackedVector2Array(379, 338, 359, 295, 389, 276, 408, 246, 441, 261, 445, 278, 462, 294, 454, 325, 429, 340, 405, 356)
+
+[node name="Boulder3" type="Polygon2D" parent="Arena"]
+position = Vector2(-713, -257)
+color = Color(0.313726, 0.309804, 0.317647, 1)
+polygon = PackedVector2Array(384, 338, 353, 294, 377, 273, 408, 246, 441, 261, 445, 278, 462, 294, 454, 325, 431, 326)
+
+[node name="Boulder2" type="Polygon2D" parent="Arena"]
+position = Vector2(-662, 222)
+color = Color(0.313726, 0.309804, 0.317647, 1)
+polygon = PackedVector2Array(384, 338, 359, 295, 377, 273, 403, 262, 441, 261, 445, 278, 462, 294, 454, 325, 429, 340)
+
+[node name="OuterWall" type="Polygon2D" parent="Arena"]
+position = Vector2(103.653, 137.587)
+scale = Vector2(0.943297, 0.834318)
+color = Color(0.176471, 0.172549, 0.180392, 1)
+invert_enabled = true
+invert_border = 1000.0
+polygon = PackedVector2Array(-835, 1164, -954.793, 228.049, -841.361, -330.403, -832, -779, 507.101, -888.854, 1828, -798, 1862.98, 188.672, 1834.36, 1078.02, 1580.7, 1268.1, 422.292, 1282.98)
+
+[node name="Wall" type="Polygon2D" parent="Arena"]
+position = Vector2(4.27548, 3.8147e-06)
+scale = Vector2(1.04408, 1)
+color = Color(0.176471, 0.172549, 0.180392, 1)
+polygon = PackedVector2Array(-97, -51, -97, 9, 207, 6, 207, 132, 266, 144, 260, 46, 252, -60)
+
+[node name="Wall3" type="Polygon2D" parent="Arena"]
+position = Vector2(-7, 612)
+scale = Vector2(1, -1)
+color = Color(0.176471, 0.172549, 0.180392, 1)
+polygon = PackedVector2Array(-97, -51, -97, 9, 207, 6, 207, 132, 266, 144, 252, -60)
+
+[node name="Wall4" type="Polygon2D" parent="Arena"]
+position = Vector2(1098.73, 7)
+scale = Vector2(-1.15686, 1)
+color = Color(0.176471, 0.172549, 0.180392, 1)
+polygon = PackedVector2Array(-97, -51, -97, 9, 207, 6, 207, 132, 266, 144, 252, -60)
+
+[node name="Wall2" type="Polygon2D" parent="Arena"]
+position = Vector2(1046, 645)
+rotation = -3.07527
+color = Color(0.176471, 0.172549, 0.180392, 1)
+polygon = PackedVector2Array(-97, -51, -97, 9, -93.2594, -0.821106, 207, 6, 207, 132, 266, 144, 252, -60)
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(569, 319)
+script = ExtResource("1_sjiqo")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+scale = Vector2(3, 3)
+texture = ExtResource("2_wf6rk")
+
+[node name="HealthLabel" type="Label" parent="Player"]
+offset_left = -21.0
+offset_top = -46.0
+offset_right = 22.0
+offset_bottom = -23.0
+size_flags_horizontal = 4
+text = "10/10"
+metadata/_edit_use_anchors_ = true
