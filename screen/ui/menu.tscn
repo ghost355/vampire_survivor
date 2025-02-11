@@ -18,51 +18,57 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.698623, 0.364729, 0.220445, 1)
+color = Color(0.737255, 0.454902, 0.337255, 1)
 
-[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
+[node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
 
-[node name="MainUIContainer" type="VBoxContainer" parent="ColorRect/CenterContainer"]
+[node name="MainUIContainer" type="VBoxContainer" parent="CenterContainer"]
 layout_mode = 2
 theme_override_constants/separation = 200
 
-[node name="TitleLabel" type="Label" parent="ColorRect/CenterContainer/MainUIContainer"]
+[node name="TitleLabel" type="Label" parent="CenterContainer/MainUIContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "Survival Game"
 
-[node name="Panel" type="PanelContainer" parent="ColorRect/CenterContainer/MainUIContainer"]
+[node name="Panel" type="PanelContainer" parent="CenterContainer/MainUIContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect/CenterContainer/MainUIContainer/Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/MainUIContainer/Panel"]
 layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/CenterContainer/MainUIContainer/Panel/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/MainUIContainer/Panel/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/CenterContainer/MainUIContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/MainUIContainer/Panel/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(-1.93, 0)
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="PlayButton" type="Button" parent="ColorRect/CenterContainer/MainUIContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="PlayButton" type="Button" parent="CenterContainer/MainUIContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "PLAY"
 
-[node name="ExitButton" type="Button" parent="ColorRect/CenterContainer/MainUIContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="ExitButton" type="Button" parent="CenterContainer/MainUIContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "EXIT"
 
-[node name="CreditLabel" type="Label" parent="ColorRect/CenterContainer/MainUIContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="CreditLabel" type="Label" parent="CenterContainer/MainUIContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Made by P.Pavlov"
 horizontal_alignment = 1
+
+[connection signal="pressed" from="CenterContainer/MainUIContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CenterContainer/MainUIContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

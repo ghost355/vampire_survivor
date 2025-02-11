@@ -8,7 +8,7 @@
 radius = 22.0
 height = 46.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 position = Vector2(569, 319)
 collision_layer = 3
 script = ExtResource("1_iudb5")
