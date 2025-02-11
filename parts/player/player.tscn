@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwo7h4qeyipxg"]
+
+[ext_resource type="Script" path="res://parts/player/player.gd" id="1_iudb5"]
+[ext_resource type="Texture2D" uid="uid://bb36r4crpguyv" path="res://assets/sprites/character/character01.png" id="2_rdy2l"]
+[ext_resource type="Script" path="res://parts/player/camera_position.gd" id="3_abnk3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_plujm"]
+radius = 22.0
+height = 46.0
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(569, 319)
+collision_layer = 3
+script = ExtResource("1_iudb5")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("2_rdy2l")
+
+[node name="HealthLabel" type="Label" parent="."]
+offset_left = -21.0
+offset_top = -46.0
+offset_right = 22.0
+offset_bottom = -23.0
+size_flags_horizontal = 4
+text = "10/10"
+metadata/_edit_use_anchors_ = true
+
+[node name="GoldLabel" type="Label" parent="."]
+offset_left = -8.0
+offset_top = 22.0
+offset_right = 35.0
+offset_bottom = 45.0
+size_flags_horizontal = 4
+text = "0$"
+metadata/_edit_use_anchors_ = true
+
+[node name="CameraPosition" type="Node2D" parent="."]
+script = ExtResource("3_abnk3")
+position_interpolation_speed = 1.0
+
+[node name="Camera2D" type="Camera2D" parent="CameraPosition"]
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.1
+drag_top_margin = 0.1
+drag_right_margin = 0.1
+drag_bottom_margin = 0.1
+editor_draw_drag_margin = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_plujm")

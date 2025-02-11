@@ -1,0 +1,82 @@
+[gd_scene load_steps=8 format=3 uid="uid://ck2g1dbq0ftuw"]
+
+[ext_resource type="PackedScene" uid="uid://4b6vfsbcd08f" path="res://parts/arena/boulder.tscn" id="1_alj28"]
+[ext_resource type="PackedScene" uid="uid://bh50god5dwty8" path="res://parts/collectibles/health_potion.tscn" id="2_n7de5"]
+[ext_resource type="PackedScene" uid="uid://1uwi81dhwvs" path="res://parts/arena/wall.tscn" id="2_wn5af"]
+[ext_resource type="PackedScene" uid="uid://cwo7h4qeyipxg" path="res://parts/player/player.tscn" id="3_slj3s"]
+[ext_resource type="PackedScene" uid="uid://bgql6i8x3utkc" path="res://parts/collectibles/coin.tscn" id="5_g3hkb"]
+[ext_resource type="PackedScene" uid="uid://couksm7ipevhl" path="res://parts/arena/boulder_a.tscn" id="6_s7wku"]
+[ext_resource type="PackedScene" uid="uid://b12uglabsytxm" path="res://parts/arena/boulder_b.tscn" id="7_he1g5"]
+
+[node name="Main" type="Node"]
+
+[node name="Arena" type="Node2D" parent="."]
+
+[node name="OuterWall" type="Polygon2D" parent="Arena"]
+position = Vector2(103.653, 137.587)
+scale = Vector2(0.943297, 0.834318)
+color = Color(0.176471, 0.172549, 0.180392, 1)
+invert_enabled = true
+invert_border = 1000.0
+polygon = PackedVector2Array(-835, 1164, -954.793, 228.049, -841.361, -330.403, -832, -779, 507.101, -888.854, 1828, -798, 1862.98, 188.672, 1834.36, 1078.02, 1580.7, 1268.1, 422.292, 1282.98)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Arena/OuterWall"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Arena/OuterWall/StaticBody2D"]
+polygon = PackedVector2Array(-954.793, 255.793, -1964.02, 233.02, -1950.24, -1880.08, 2863.73, -1880.08, 2857.37, 2261.02, -1984.16, 2268.22, -1964.02, 240.212, -933.59, 186.275, -941.011, 340.893, -845.601, 1158.33, 379.888, 1287.77, 1576.75, 1275.79, 1833.3, 1073.23, 1868.28, 249.8, 1841.78, -198.47, 1826.94, -796.563, 504.981, -891.251, -838.18, -784.577, -845.601, -299.151)
+
+[node name="Wall" parent="Arena" instance=ExtResource("2_wn5af")]
+position = Vector2(87.2755, 28)
+
+[node name="Wall2" parent="Arena" instance=ExtResource("2_wn5af")]
+position = Vector2(64, 643)
+scale = Vector2(1.044, -1)
+
+[node name="Wall3" parent="Arena" instance=ExtResource("2_wn5af")]
+position = Vector2(1080, 30)
+scale = Vector2(-1, 1)
+polygon = PackedVector2Array(-97, -51, -97, 9, -8.72455, -3.8147e-06, 207, 6, 207, 132, 266, 144, 260, 46, 252, -60)
+
+[node name="Wall4" parent="Arena" instance=ExtResource("2_wn5af")]
+position = Vector2(1095, 631)
+scale = Vector2(-1, -1)
+
+[node name="HealthPotion" parent="Arena" instance=ExtResource("2_n7de5")]
+position = Vector2(714, 323)
+
+[node name="Coin" parent="Arena" instance=ExtResource("5_g3hkb")]
+position = Vector2(391, 324)
+
+[node name="Boulder" parent="Arena" instance=ExtResource("1_alj28")]
+position = Vector2(1818, -387)
+rotation = 3.14159
+scale = Vector2(1, -1.165)
+
+[node name="Boulder2" parent="Arena" instance=ExtResource("1_alj28")]
+position = Vector2(-746, 995)
+rotation = -1.16838
+
+[node name="Boulder3" parent="Arena" instance=ExtResource("1_alj28")]
+position = Vector2(-946, -574)
+scale = Vector2(1.41, 1.41)
+
+[node name="Boulder4" parent="Arena" instance=ExtResource("1_alj28")]
+position = Vector2(-459, 518)
+rotation = -0.961676
+
+[node name="Boulder5" parent="Arena" instance=ExtResource("1_alj28")]
+position = Vector2(1821, 443)
+rotation = 2.43474
+
+[node name="Boulder_A" parent="Arena" instance=ExtResource("6_s7wku")]
+position = Vector2(175, -545)
+
+[node name="Boulder_B" parent="Arena" instance=ExtResource("7_he1g5")]
+position = Vector2(165, 676)
+
+[node name="Boulder_A2" parent="Arena" instance=ExtResource("6_s7wku")]
+position = Vector2(1112, 1279)
+rotation = -1.56381
+
+[node name="Player" parent="." instance=ExtResource("3_slj3s")]
+health = 7

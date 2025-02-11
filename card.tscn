@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyud3uhrygrix"]
+
+[ext_resource type="Script" path="res://card.gd" id="1_i6tcj"]
+[ext_resource type="Texture2D" uid="uid://e0aalevirydi" path="res://card/AC 34 Cover.jpg" id="2_2x1kg"]
+[ext_resource type="Texture2D" uid="uid://jlt44klms8jn" path="res://card/zAction Card Back.jpg" id="3_mlnyo"]
+
+[node name="Card" type="Node2D"]
+position = Vector2(500, 300)
+script = ExtResource("1_i6tcj")
+
+[node name="front" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_2x1kg")
+
+[node name="back" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_mlnyo")

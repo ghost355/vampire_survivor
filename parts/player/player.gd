@@ -6,6 +6,13 @@ const MAX_HEALTH: int = 10
 @export var acceleration: float = 2500.0
 @export var deceleration: float = 1500.0
 
+@export var gold: int = 0:
+    get:
+        return gold
+    set(value):
+        gold = value
+        update_gold_label()
+
 @export_range(0, MAX_HEALTH) var health: int = 10:
     get:
         return health
@@ -14,10 +21,12 @@ const MAX_HEALTH: int = 10
         update_health_label()
 
 @onready var _health_label: Label = $HealthLabel
+@onready var _gold_label: Label = $GoldLabel
 
 
 func _ready() -> void:
     update_health_label()
+    update_gold_label()
 
 
 func _physics_process(delta: float) -> void:
@@ -40,3 +49,8 @@ func update_health_label():
     if not is_instance_valid(_health_label):
         return
     _health_label.text = str(health) + "/" + str(MAX_HEALTH)
+
+func update_gold_label():
+    if not is_instance_valid(_gold_label):
+        return
+    _gold_label.text = str(gold) + "$"

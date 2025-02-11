@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b12uglabsytxm"]
+
+[ext_resource type="PackedScene" uid="uid://dmqgi5j2mqd43" path="res://parts/arena/boulder_base.tscn" id="1_hsshr"]
+
+[node name="Boulder_B" instance=ExtResource("1_hsshr")]
+polygon = PackedVector2Array(374, 345, 340, 288, 378, 263, 394, 231, 440, 235, 468, 264, 462, 294, 461, 339, 426, 330)
+
+[node name="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+polygon = PackedVector2Array(344, 288, 378, 263, 395, 231, 442, 235, 468, 265, 462, 296, 460, 337, 425, 330, 372, 344)
