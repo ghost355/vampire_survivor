@@ -1,0 +1,67 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmu1gy5x7sg8"]
+
+[ext_resource type="Script" path="res://screen/ui/menu.gd" id="1_ok6s5"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ok6s5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.698623, 0.364729, 0.220445, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainUIContainer" type="VBoxContainer" parent="ColorRect/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 200
+
+[node name="TitleLabel" type="Label" parent="ColorRect/CenterContainer/MainUIContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Survival Game"
+
+[node name="Panel" type="PanelContainer" parent="ColorRect/CenterContainer/MainUIContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/CenterContainer/MainUIContainer/Panel"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/CenterContainer/MainUIContainer/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/CenterContainer/MainUIContainer/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(-1.93, 0)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="PlayButton" type="Button" parent="ColorRect/CenterContainer/MainUIContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "PLAY"
+
+[node name="ExitButton" type="Button" parent="ColorRect/CenterContainer/MainUIContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "EXIT"
+
+[node name="CreditLabel" type="Label" parent="ColorRect/CenterContainer/MainUIContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Made by P.Pavlov"
+horizontal_alignment = 1

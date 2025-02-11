@@ -18,24 +18,24 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func flip_card():
     var factor = 1.15
-    var tween = create_tween()
+    var tween = create_tween().set_ease(Tween.EASE_IN_OUT)
     tween.tween_property(self, "scale", scale * factor, flip_time/2)
     await tween.finished
     
-    tween = create_tween()
+    tween = create_tween().set_trans(Tween.TRANS_QUAD)
     tween.tween_property(self, "scale", Vector2(0, 1 * factor), flip_time)
     await tween.finished
     front.visible = !front.visible
     back.visible = !back.visible
     
-    tween = create_tween()
+    tween = create_tween().set_trans(Tween.TRANS_QUAD)
     tween.tween_property(self, "scale", Vector2(1 * factor, 1 * factor), flip_time)
     await tween.finished
 
-    tween = create_tween()
+    tween = create_tween().set_ease(Tween.EASE_OUT)
     tween.tween_property(self, "scale", scale / factor, flip_time/2)
     await tween.finished
     
 func rotate_card(angle: float):
-    var tween = create_tween()
+    var tween = create_tween().set_ease(Tween.EASE_IN_OUT)
     tween.tween_property(self, "rotation", rotation + angle, flip_time)
