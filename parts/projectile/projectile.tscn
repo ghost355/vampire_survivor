@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://ok1d2duq7loj"]
+
+[ext_resource type="Texture2D" uid="uid://b53enicokee3b" path="res://assets/sprites/projectiles/arrow01.png" id="1_5gx5f"]
+[ext_resource type="Script" path="res://parts/projectile/projectile.gd" id="1_iv0ff"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iwylw"]
+radius = 7.0
+height = 32.0
+
+[node name="Projectile" type="Node2D"]
+script = ExtResource("1_iv0ff")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_5gx5f")
+
+[node name="EnemyDetectionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetectionArea"]
+position = Vector2(-3, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_iwylw")
+
+[node name="DestroyTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="body_entered" from="EnemyDetectionArea" to="." method="_on_enemy_detection_area_body_entered"]
+[connection signal="timeout" from="DestroyTimer" to="." method="_on_destroy_timer_timeout"]

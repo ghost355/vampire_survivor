@@ -10,7 +10,8 @@ height = 21.955
 [sub_resource type="CircleShape2D" id="CircleShape2D_on4w3"]
 radius = 35.0571
 
-[node name="Enemy" type="CharacterBody2D"]
+[node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 5
 script = ExtResource("1_3acbp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -25,6 +26,7 @@ texture = ExtResource("1_g03dt")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
 [node name="PlayerDetectionArea" type="Area2D" parent="."]
+collision_layer = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectionArea"]
 shape = SubResource("CircleShape2D_on4w3")
