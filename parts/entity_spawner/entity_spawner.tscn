@@ -6,3 +6,7 @@
 script = ExtResource("1_665om")
 
 [node name="Positions" type="Node2D" parent="."]
+
+[node name="SpawnTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

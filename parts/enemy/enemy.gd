@@ -24,3 +24,10 @@ func _physics_process(delta: float) -> void:
         velocity = velocity.move_toward(direction_to_next_position * max_speed, acceleration * delta)
         
         move_and_slide()
+
+
+func _on_player_detection_area_body_entered(body: Node2D) -> void:
+    if not body.is_in_group("player"):
+        return
+    body.get_hit()
+    queue_free()

@@ -59,10 +59,12 @@ theme_override_constants/separation = 20
 
 [node name="PlayButton" type="Button" parent="CenterContainer/MainUIContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 36
 text = "PLAY"
 
 [node name="ExitButton" type="Button" parent="CenterContainer/MainUIContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 36
 text = "EXIT"
 
 [node name="CreditLabel" type="Label" parent="CenterContainer/MainUIContainer/Panel/MarginContainer/VBoxContainer"]
